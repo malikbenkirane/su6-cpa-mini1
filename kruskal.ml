@@ -12,10 +12,10 @@ let kruskal vlist =
                 if c then kruskal redges acm_edges uf
                 else kruskal redges (e::acm_edges) uf 
         | [] -> acm_edges
-    in kruskal sorted_edges [] uf
-(*
+    (* in kruskal sorted_edges [] uf *)
+    in 
     let acm_edges = kruskal sorted_edges [] uf in
-    acm_edges
+    (* acm_edges *)
     (* second pass : acm successors list *)
     let acm_successors = Hashtbl.create (List.length vlist) in
     List.iter (fun e ->
@@ -29,12 +29,11 @@ let kruskal vlist =
             in (Graph.str_of_point v)
                 ^ ":" ^ (Graph.str_of_points successors)
     ) vlist
-*)
 
 open Read_points
 let _ =
     let vertices = read_vertices () in
-    kruskal vertices
-(*
-    print_string (String.concat "\n" (kruskal vertices))
-*)
+    (* kruskal vertices *)
+    print_string (String.concat "\n" (kruskal vertices));
+    print_string "\n"
+
