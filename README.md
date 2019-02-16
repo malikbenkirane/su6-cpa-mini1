@@ -1,11 +1,11 @@
-compilation command (with debug flag) :
+compilation command :
 ```
-ocamlc -g graph.ml read_points.ml uf.ml kruskal.ml
-```
-
-debug
-```
-OCAMLRUNPARAM=b ./a.out < input.points
+ocamlc graph.ml read_points.ml uf.ml kruskal.ml
 ```
 
-test failed with `Stack_overflow` exception
+run
+```
+./a.out < input.points > sol.txt
+```
+
+`Stack_overflow` exception
