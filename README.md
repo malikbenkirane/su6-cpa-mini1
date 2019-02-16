@@ -8,4 +8,4 @@ debug
 OCAMLRUNPARAM=b ./a.out < input.points
 ```
 
-test failed with `Stack_overflow` exception
+test failing with `Stack_overflow` exception
