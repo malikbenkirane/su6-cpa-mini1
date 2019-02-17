@@ -1,3 +1,11 @@
+#load "graph.cmo";;
+#load "uf.cmo";;
+#load "read_points.cmo";;
+
+open Graph
+open Read_points
+open Uf
+
 let rec uniq l = match l with
 | x::r -> if List.mem x r then r else x::(uniq r)
 | [] -> []
@@ -30,10 +38,25 @@ let kruskal vlist =
                 ^ ":" ^ (Graph.str_of_points successors)
     ) vlist
 
-open Read_points
+let read_vertices () =
+    let vertices = ref [] in
+        try 
+        while true do
+            let x, y =
+                Scanf.bscanf Scanf.Scanning.stdin "%f %f\n" (fun x y -> (x, y))
+            in vertices := (Vertex (x, y))::!vertices
+        done ; !vertices
+        with End_of_file -> !vertices
+;;
+
+#trace find
+
 let _ =
     let vertices = read_vertices () in
     (* kruskal vertices *)
     print_string (String.concat "\n" (kruskal vertices));
     print_string "\n"
+;;
+
+Scanf.scanf "%d" (fun x -> x);;
 
