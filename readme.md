@@ -1,3 +1,5 @@
+**current woriking branch : `ocaml-steiner`**
+
 *git cheatsheat (feel free to add more tricks : )*
 
 fetch all remote branches
