@@ -28,11 +28,3 @@ let kruskal vlist =
     (fun v -> let successors = uniq (Hashtbl.find_all acm_successors v) in
               (Graph.str_of_point v) ^ ":" ^ (Graph.str_of_points successors)
     ) vlist
-
-open Read_points
-let _ =
-    let vertices = read_vertices () in
-    (* kruskal vertices *)
-    print_string (String.concat "\n" (kruskal vertices));
-    print_string "\n"
-
