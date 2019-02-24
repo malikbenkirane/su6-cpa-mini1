@@ -1,4 +1,4 @@
-**current working branch : `ocaml-steiner`**
+**current branch : `ocaml-steiner`**
 
 *git cheatsheat (feel free to add more tricks : )*
 
